@@ -5,7 +5,7 @@ def roman_to_int(roman_string):
     hundreds = ['C', 'CC', 'CCC', 'CD', 'D', 'DC', 'DCC', 'DCCC', 'CM']
     thousands = ['M', 'MM', 'MMM']
     total = 0
-    if not (type(roman_string) == str):
+    if not (isinstance(roman_string, str)):
         return total
     nested_list = {tuple(thousands): 1000, tuple(hundreds): 100,
                    tuple(tens): 10, tuple(units): 1}

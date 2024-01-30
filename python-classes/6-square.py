@@ -31,13 +31,15 @@ class Square:
         return self.__position
 
     @position.setter
-    def position(self, position):
+    def position(self, value):
         """ Setter method for position private attribute """
-        if (not isinstance(self.position, tuple) and not (len(position) == 2)
-                and position[0] < 0 and position[1] < 0):
+        if (not isinstance(self.position, tuple) or not (len(value) == 2)
+                or not isinstance(value[0], int)
+                or not isinstance(value[1], int)
+                or value[0] < 0 or value[1] < 0):
             raise TypeError("position must be a tuple of 2 positive integers")
         else:
-            self.__position = position
+            self.__position = value
 
     @size.setter
     def size(self, size):

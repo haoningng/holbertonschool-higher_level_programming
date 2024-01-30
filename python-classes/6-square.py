@@ -29,11 +29,12 @@ class Square:
     def position(self):
         """Getter method for position private attribute """
         return self.__position
-    
+
     @position.setter
     def position(self, position):
         """ Setter method for position private attribute """
-        if (not(len(position) == 2) and position[0] < 0 and position[1] < 0):
+        if (not isinstance(self.position, tuple) and not (len(position) == 2)
+                and position[0] < 0 and position[1] < 0):
             raise TypeError("position must be a tuple of 2 positive integers")
         else:
             self.__position = position

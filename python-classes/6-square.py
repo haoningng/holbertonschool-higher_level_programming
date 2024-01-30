@@ -16,6 +16,7 @@ class Square:
 
         Args:
             size (int): size of the square
+            position (tuple): position of the square
         """
         self.__size = size
         self.__position = position
@@ -33,7 +34,7 @@ class Square:
     @position.setter
     def position(self, value):
         """ Setter method for position private attribute """
-        if (not isinstance(self.position, tuple) or not (len(value) == 2)
+        if (not isinstance(value, tuple) or not (len(value) == 2)
                 or not isinstance(value[0], int)
                 or not isinstance(value[1], int)
                 or value[0] < 0 or value[1] < 0):
@@ -57,13 +58,13 @@ class Square:
 
     def my_print(self):
         """ Prints the square with the character # """
-        if self.size == 0:
+        if self.__size == 0:
             print()
-        for i in range(self.position[1]):
+        for i in range(self.__position[1]):
             print()
-        for i in range(self.size):
-            for k in range(self.position[0]):
+        for i in range(self.__size):
+            for k in range(self.__position[0]):
                 print(" ", end="")
-            for j in range(self.size):
+            for j in range(self.__size):
                 print("#", end="")
             print()

@@ -13,11 +13,11 @@ Tests:
     text is string:
     >>> text = "hello. It's me? Peggy: Your friend"
     >>> text_indentation(text)
-    hello
+    hello.
     <BLANKLINE>
-    It's me
+    It's me?
     <BLANKLINE>
-    Peggy
+    Peggy:
     <BLANKLINE>
     Your friend
 

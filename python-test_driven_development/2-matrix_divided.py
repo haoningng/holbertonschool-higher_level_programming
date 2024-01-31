@@ -1,9 +1,10 @@
 #!/usr/bin/python3
 """
-This is a module for matrix_divided
+Module: 2-matrix_divided.py
 
 Function: matrix_divided()
 """
+
 
 def matrix_divided(matrix, div):
     """

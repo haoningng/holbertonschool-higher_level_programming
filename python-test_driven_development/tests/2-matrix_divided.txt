@@ -1,0 +1,75 @@
+The ``2-matrix_divided`` module
+============================
+
+Using ``matrix_divided``
+-------------------
+
+This is a text file in reStructuredText format.  First import
+``matrix_divided`` from the ``2-matrix_divided`` module:
+    >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+Tests:
+
+    Same length, all integers:
+    >>> matrix = [
+    ...    [1, 2, 3],
+    ...    [4, 5, 6]
+    ... ]
+    >>> print(matrix_divided(matrix, 3))
+    [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+    Same length, all floats:
+    >>> matrix = [
+    ...    [1.4, 2.2, 3.3],
+    ...    [4.2, 5.3, 6.5]
+    ... ]
+    >>> print(matrix_divided(matrix, 3))
+    [[0.47, 0.73, 1.1], [1.4, 1.77, 2.17]]
+
+    Different length, all integers:
+    >>> matrix = [
+    ...    [1, 2, 3],
+    ...    [4, 5]
+    ... ]
+    >>> print(matrix_divided(matrix, 3))
+    Traceback (most recent call last):
+    ...
+    TypeError: Each row of the matrix must have the same size
+
+    Same length, one string:
+    >>> matrix = [
+    ...    [1, 2, 3],
+    ...    [4, "oops", 6]
+    ... ]
+    >>> print(matrix_divided(matrix, 3))
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+    Same length, all integers, float div:
+    >>> matrix = [
+    ...    [1, 2, 3],
+    ...    [4, 5, 6]
+    ... ]
+    >>> print(matrix_divided(matrix, 3.3))
+    [[0.3, 0.61, 0.91], [1.21, 1.52, 1.82]]
+
+    Same length, all integers, string div:
+    >>> matrix = [
+    ...    [1, 2, 3],
+    ...    [4, 5, 6]
+    ... ]
+    >>> print(matrix_divided(matrix, "oh"))
+    Traceback (most recent call last):
+    ...
+    TypeError: div must be a number
+
+    Same length, all integers, 0 div:
+    >>> matrix = [
+    ...    [1, 2, 3],
+    ...    [4, 5, 6]
+    ... ]
+    >>> print(matrix_divided(matrix, 0))
+    Traceback (most recent call last):
+    ...
+    ZeroDivisionError: division by zero

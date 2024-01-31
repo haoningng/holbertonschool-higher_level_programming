@@ -18,6 +18,7 @@ def text_indentation(text):
         raise TypeError("text must be a string")
     for char in text:
         if char == '.' or char == '?' or char == ':':
+            print("{}".format(char), end="")
             print('\n')
             skip = 1
         elif char == ' ' and skip == 1:

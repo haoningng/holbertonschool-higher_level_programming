@@ -8,18 +8,19 @@ class Square:
     This is a simple implementation of a class
 
     Attributes:
-        None
+        size (int): size of the square
+        position (tuple): position of the square
 
     """
     def __init__(self, size=0, position=(0, 0)):
-        """Docstring on the __init__ method.
+        """Initialize the square
 
         Args:
             size (int): size of the square
             position (tuple): position of the square
         """
-        self.__size = size
-        self.__position = position
+        self.size = size
+        self.position = position
 
     @property
     def size(self):
@@ -38,10 +39,12 @@ class Square:
         Args:
             value (tuple): A tuple of 2 positive integers
         """
-        if (not isinstance(value, tuple) or not (len(value) == 2)
-                or not isinstance(value[0], int)
-                or not isinstance(value[1], int)
-                or value[0] < 0 or value[1] < 0):
+        if not (isinstance(value, tuple)
+                and (len(value) == 2)
+                and isinstance(value[0], int)
+                and isinstance(value[1], int)
+                and value[0] >= 0
+                and value[1] >= 0):
             raise TypeError("position must be a tuple of 2 positive integers")
         else:
             self.__position = value

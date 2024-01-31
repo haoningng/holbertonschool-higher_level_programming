@@ -25,4 +25,3 @@ def text_indentation(text):
             pass
         else:
             print("{}".format(char), end="")
-    print()

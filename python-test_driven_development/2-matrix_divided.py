@@ -11,7 +11,7 @@ def matrix_divided(matrix, div):
 
     Args:
     matrix: list of lists of integers or floats
-    dix(int/float): number by which each elements of matrix is divided
+    div(int/float): number by which each elements of matrix is divided
 
     Return:
     A new matrix

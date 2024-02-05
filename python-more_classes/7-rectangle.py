@@ -73,8 +73,8 @@ class Rectangle:
         """Define rectangle in a string format"""
         if (self.height == 0 or self.width == 0):
             return str('')
-        return (str(self.print_symbol * self.width) + '\n') * (
-            self.height - 1) + str(self.print_symbol * self.width)
+        return (str(self.print_symbol) * self.width + '\n') * (
+            self.height - 1) + str(self.print_symbol) * self.width
 
     def __repr__(self):
         """Define rectangle in a string format"""

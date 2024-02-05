@@ -77,4 +77,4 @@ class Rectangle:
         if (self.height == 0 or self.width == 0):
             return str('')
         return str('Rectangle(') + str(
-            self.height) + ', ' + str(self.width) + ')'
+            self.width) + ', ' + str(self.height) + ')'

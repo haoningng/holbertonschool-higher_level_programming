@@ -11,7 +11,7 @@ class Rectangle:
 
     def __init__(self, width=0, height=0):
         """Initialise the rectangle
-        
+
         Args:
         width: Width of the rectangle
         height: Height of the rectangle
@@ -27,7 +27,7 @@ class Rectangle:
     @width.setter
     def width(self, value):
         """Set the width of the rectangle
-        
+
         Args
         value: value of the width
         """
@@ -45,7 +45,7 @@ class Rectangle:
     @height.setter
     def height(self, value):
         """Set the height of the rectangle
-        
+
         Args:
         value: value of the height
         """

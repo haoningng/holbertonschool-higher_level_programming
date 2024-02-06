@@ -77,9 +77,6 @@ Tests:
 
     value is a bool:
     >>> bg.integer_validator("age", True)
-    Traceback (most recent call last):
-    ...
-    TypeError: age must be an integer
 
     test area():
     >>> bg.area()

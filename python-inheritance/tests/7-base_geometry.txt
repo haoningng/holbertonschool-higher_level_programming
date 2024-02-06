@@ -56,3 +56,30 @@ Tests:
     Traceback (most recent call last):
     ...
     TypeError: age must be an integer
+
+    value is a tuple:
+    >>> bg.integer_validator("age", (1, 2))
+    Traceback (most recent call last):
+    ...
+    TypeError: age must be an integer
+
+    value is a half tuple:
+    >>> bg.integer_validator("age", (1,))
+    Traceback (most recent call last):
+    ...
+    TypeError: age must be an integer
+
+    value is a None:
+    >>> bg.integer_validator("age", None)
+    Traceback (most recent call last):
+    ...
+    TypeError: age must be an integer
+
+    value is a bool:
+    >>> bg.integer_validator("age", True)
+
+    test area():
+    >>> bg.area()
+    Traceback (most recent call last):
+    ...
+    Exception: area() is not implemented

@@ -12,6 +12,7 @@ These are my projects in Python, completed as part of my Full Stack Software Eng
 * [Python - Test-driven development](python-test_driven_development/)
 * [Python - More Classes and Objects](python-more_classes/)
 * [Python - Everything is Object](python-everything_is_object/)
+* [Python - Inheritance](python-inheritance/)
 
 ## Requirements:
 * Ubuntu 20.04 LTS using python3 (version 3.8.*)

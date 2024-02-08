@@ -10,8 +10,8 @@ def inherits_from(obj, a_class):
     obj: subclass
     a_class: superclass
     """
-    if isinstance(obj, a_class):
-        if type(obj) != a_class:
-            return True
-    else:
-        return False
+    if type(obj) is not a_class:
+        for base in type(obj).__mro__:
+            if base is a_class:
+                return True
+    return False

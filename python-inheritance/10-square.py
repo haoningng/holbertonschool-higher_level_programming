@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """This module creates the BaseGeometry class"""
-Rectangle = __import__('8-rectangle').Rectangle
+Rectangle = __import__('9-rectangle').Rectangle
 
 
 class Square(Rectangle):
@@ -26,4 +26,4 @@ class Square(Rectangle):
 
     def __str__(self):
         """Defines the str format of te Square"""
-        return str("[Rectangle] {}/{}".format(self.__size, self.__size))
+        return str("[Square] {}/{}".format(self.__size, self.__size))

@@ -14,6 +14,7 @@ These are my projects in Python, completed as part of my Full Stack Software Eng
 * [Python - Everything is Object](python-everything_is_object/)
 * [Python - Inheritance](python-inheritance/)
 * [Python - Input/Output](python-input_output/)
+* [Python - Almost A Circle](python-almost_a_circle/)
 
 ## Requirements:
 * Ubuntu 20.04 LTS using python3 (version 3.8.*)

@@ -8,7 +8,7 @@ class Rectangle(Base):
 
     def __init__(self, width, height, x=0, y=0, id=None):
         """Initiates the class
-        
+
         Args:
         width(int): width
         height(int): height
@@ -21,7 +21,7 @@ class Rectangle(Base):
         self.x = x
         self.y = y
         super().__init__(id)
-    
+
     @property
     def width(self):
         """Returns width"""
@@ -30,7 +30,7 @@ class Rectangle(Base):
     @width.setter
     def width(self, value):
         """Sets width
-        
+
         Args:
         value: new value for width
         """
@@ -48,7 +48,7 @@ class Rectangle(Base):
     @height.setter
     def height(self, value):
         """Sets height
-        
+
         Args:
         value: new value for height
         """
@@ -66,7 +66,7 @@ class Rectangle(Base):
     @x.setter
     def x(self, value):
         """Sets x
-        
+
         Args:
         value: new value for x
         """
@@ -84,7 +84,7 @@ class Rectangle(Base):
     @y.setter
     def y(self, value):
         """Sets y
-        
+
         Args:
         value: new value for y
         """
@@ -99,6 +99,11 @@ class Rectangle(Base):
         return self.height * self.width
 
     def display(self):
-        """prints in stdout the Rectangle instance with the char #"""
+        """Prints in stdout the Rectangle instance with the char #"""
         print((("#" * self.width) + '\n') * (self.height - 1) + "#" *
               self.width)
+
+    def __str__(self):
+        """Returns string representation of Rectangle"""
+        return ("[Rectangle] ({}) {}/{} - {}/{}"
+                .format(self.id, self.x, self.y, self.width, self.height))

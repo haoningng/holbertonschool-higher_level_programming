@@ -48,5 +48,6 @@ class Base:
         for each in list_objs:
             dictionary.append(each.to_dictionary())
         json_dictionary = cls.to_json_string(dictionary)
-        with open("{}.json".format(cls.__name__), "w", encoding="UTF-8") as file:
+        with open("{}.json".format(cls.__name__),
+                  "w", encoding="UTF-8") as file:
             file.write(json_dictionary)

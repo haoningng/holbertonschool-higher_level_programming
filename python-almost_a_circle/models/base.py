@@ -42,6 +42,8 @@ class Base:
         Args:
         list_objs(list): list of instances who inherits of Base
         """
+        if list_objs is None:
+            list_objs = []
         dictionary = []
         for each in list_objs:
             dictionary.append(each.to_dictionary())

@@ -81,9 +81,7 @@ class Base:
     @classmethod
     def load_from_file(cls):
         """Return a list of instance"""
-        if not cls.__name__:
-            return []
-        else:
+        try:
             with open("{}.json".format(cls.__name__), "r",
                       encoding="UTF-8") as file:
                 new_list = cls.from_json_string(file.read())
@@ -91,3 +89,5 @@ class Base:
                 for each in new_list:
                     result.append(cls.create(**each))
                 return result
+        except Exception:
+            return []

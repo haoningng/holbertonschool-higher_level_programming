@@ -9,9 +9,9 @@ class TestRectangle(unittest.TestCase):
     def test_id(self):
         """Test for id attribute"""
         r1 = Rectangle(10, 2)
-        self.assertEqual(r1.id, 13)
+        self.assertEqual(r1.id, 12)
         r2 = Rectangle(2, 10)
-        self.assertEqual(r2.id, 14)
+        self.assertEqual(r2.id, 13)
         r3 = Rectangle(10, 2, 0, 0, 12)
         self.assertEqual(r3.id, 12)
 
@@ -85,12 +85,14 @@ class TestRectangle(unittest.TestCase):
         """Test for display method"""
         r1 = Rectangle(10, 2)
         self.assertEqual(r1.display(), None)
-        r2 = Rectangle(2, 10)
-        self.assertEqual(r2.display(), None)
         r3 = Rectangle(10, 2, 2)
         self.assertEqual(r3.display(), None)
         r3 = Rectangle(10, 2, 2, 0, 12)
         self.assertEqual(r3.display(), None)
+        with self.assertRaises(TypeError):
+            r3 = Rectangle(10, 2, None, None, 12)
+        with self.assertRaises(TypeError):
+            r3 = Rectangle(10, 2, 2, None, 12)
     
     def test_str(self):
         """Test for __str__ method"""

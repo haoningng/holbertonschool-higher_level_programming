@@ -2,6 +2,8 @@
 """unittest for Base Class"""
 import unittest
 from models.rectangle import Rectangle
+from io import StringIO
+import io, sys, os
 
 
 class TestRectangle(unittest.TestCase):
@@ -82,23 +84,30 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r3.area(), 2)
 
     def test_display(self):
+        """Test for display method - no x no y"""
+        r1 = Rectangle(2, 2)
+        display_1 = "##\n##\n"
+        captured_input = StringIO()
+        sys.stdout = captured_input
+        r1.display()
+        sys.stdout = sys.__stdout__
+        self.assertEqual(captured_input.getvalue(), display_1)
+        """Test for display method - no y"""
+        r1 = Rectangle(2, 2, 2)
+        display_1 = "  ##\n  ##\n"
+        captured_input = StringIO()
+        sys.stdout = captured_input
+        r1.display()
+        sys.stdout = sys.__stdout__
+        self.assertEqual(captured_input.getvalue(), display_1)
         """Test for display method"""
-        r1 = Rectangle(10, 2)
-        self.assertEqual(r1.display(), None)
-        r3 = Rectangle(10, 2, 2)
-        self.assertEqual(r3.display(), None)
-        r3 = Rectangle(10, 2, 2, 0, 12)
-        self.assertEqual(r3.display(), None)
-        with self.assertRaises(TypeError):
-            r3 = Rectangle(10, 2, None, None, 12)
-            r3.display()
-        with self.assertRaises(TypeError):
-            r3 = Rectangle(10, 2, 2, None, 12)
-            r3.display()
-        r7 = Rectangle(4,6)
-        r7.x = 0
-        r7.y = 0
-        self.assertEqual(r7.display(), None)
+        r1 = Rectangle(2, 2, 2, 1)
+        display_1 = "\n  ##\n  ##\n"
+        captured_input = StringIO()
+        sys.stdout = captured_input
+        r1.display()
+        sys.stdout = sys.__stdout__
+        self.assertEqual(captured_input.getvalue(), display_1)
     
     def test_str(self):
         """Test for __str__ method"""

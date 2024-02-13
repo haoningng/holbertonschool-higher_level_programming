@@ -130,9 +130,9 @@ class TestRectangle(unittest.TestCase):
         """Test for update method - **kwargs"""
         r1 = Rectangle(10, 10, 10, 10)
         r1.update(height=1)
-        self.assertEqual(str(r1), "[Rectangle] (20) 10/10 - 10/1")
+        self.assertEqual(str(r1), "[Rectangle] (24) 10/10 - 10/1")
         r1.update(width=1, x=2)
-        self.assertEqual(str(r1), "[Rectangle] (20) 2/10 - 1/1")
+        self.assertEqual(str(r1), "[Rectangle] (24) 2/10 - 1/1")
         r1.update(y=1, width=2, x=3, id=89)
         self.assertEqual(str(r1), "[Rectangle] (89) 3/1 - 2/1")
         r1.update(x=1, height=2, y=3, width=4)
@@ -152,9 +152,9 @@ class TestRectangle(unittest.TestCase):
         r2 = Rectangle(2, 4)
         Rectangle.save_to_file([r1, r2])
         with open("Rectangle.json", "r") as file:
-            self.assertEqual(file.read(), "[{\"id\": 17, \"width\": 10, " +
+            self.assertEqual(file.read(), "[{\"id\": 21, \"width\": 10, " +
                              "\"height\": 7, \"x\": 2, \"y\": 8}, " +
-                             "{\"id\": 18, \"width\": 2, " +
+                             "{\"id\": 22, \"width\": 2, " +
                              "\"height\": 4, \"x\": 0, \"y\": 0}]")
         os.remove("Rectangle.json")
         """Test for save_to_file method - None"""
@@ -167,6 +167,22 @@ class TestRectangle(unittest.TestCase):
         with open("Rectangle.json", "r") as file:
             self.assertEqual(file.read(), "[]")
         os.remove("Rectangle.json")
+
+    def test_load_from_file(self):
+        """Test for load_from_file method - File exists"""
+        r1 = Rectangle(10, 7, 2, 8)
+        r2 = Rectangle(2, 4)
+        list_rectangles_input = [r1, r2]
+        Rectangle.save_to_file(list_rectangles_input)
+        list_rectangles_output = Rectangle.load_from_file()
+        self.assertEqual(list_rectangles_output[0].width, 10)
+        self.assertEqual(list_rectangles_output[1].width, 2)
+        os.remove("Rectangle.json")
+        """Test for load_from_file method - File not exist"""
+        list_rectangles_output = Rectangle.load_from_file()
+        self.assertEqual(list_rectangles_output, [])
+        self.assertEqual(list_rectangles_output, [])
+
 
 if __name__ == "__main__":
     unittest.main()

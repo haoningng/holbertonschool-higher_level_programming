@@ -130,9 +130,9 @@ class TestRectangle(unittest.TestCase):
         """Test for update method - **kwargs"""
         r1 = Rectangle(10, 10, 10, 10)
         r1.update(height=1)
-        self.assertEqual(str(r1), "[Rectangle] (18) 10/10 - 10/1")
+        self.assertEqual(str(r1), "[Rectangle] (20) 10/10 - 10/1")
         r1.update(width=1, x=2)
-        self.assertEqual(str(r1), "[Rectangle] (18) 2/10 - 1/1")
+        self.assertEqual(str(r1), "[Rectangle] (20) 2/10 - 1/1")
         r1.update(y=1, width=2, x=3, id=89)
         self.assertEqual(str(r1), "[Rectangle] (89) 3/1 - 2/1")
         r1.update(x=1, height=2, y=3, width=4)
@@ -145,6 +145,28 @@ class TestRectangle(unittest.TestCase):
         r2 = Rectangle.create(**r1_dictionary)
         self.assertFalse(r1 is r2)
         self.assertFalse(r1 == r2)
+
+    def test_save_to_file(self):
+        """Test for save_to_file method - working"""
+        r1 = Rectangle(10, 7, 2, 8)
+        r2 = Rectangle(2, 4)
+        Rectangle.save_to_file([r1, r2])
+        with open("Rectangle.json", "r") as file:
+            self.assertEqual(file.read(), "[{\"id\": 17, \"width\": 10, " +
+                             "\"height\": 7, \"x\": 2, \"y\": 8}, " +
+                             "{\"id\": 18, \"width\": 2, " +
+                             "\"height\": 4, \"x\": 0, \"y\": 0}]")
+        os.remove("Rectangle.json")
+        """Test for save_to_file method - None"""
+        Rectangle.save_to_file(None)
+        with open("Rectangle.json", "r") as file:
+            self.assertEqual(file.read(), "[]")
+        os.remove("Rectangle.json")
+        """Test for save_to_file method - Empty"""
+        Rectangle.save_to_file([])
+        with open("Rectangle.json", "r") as file:
+            self.assertEqual(file.read(), "[]")
+        os.remove("Rectangle.json")
 
 if __name__ == "__main__":
     unittest.main()

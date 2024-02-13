@@ -1,9 +1,10 @@
 #!/usr/bin/python3
-"""unittest for Base Class"""
+"""unittest for Rectangle Class"""
 import unittest
 from models.rectangle import Rectangle
 from io import StringIO
-import io, sys, os
+import sys
+import os
 
 
 class TestRectangle(unittest.TestCase):
@@ -43,7 +44,6 @@ class TestRectangle(unittest.TestCase):
             r3 = Rectangle(2, 3, 4, -5)
         with self.assertRaises(ValueError):
             r1 = Rectangle(0, 10)
-        
 
     def test_height(self):
         """Test for height method"""
@@ -108,7 +108,7 @@ class TestRectangle(unittest.TestCase):
         r1.display()
         sys.stdout = sys.__stdout__
         self.assertEqual(captured_input.getvalue(), display_1)
-    
+
     def test_str(self):
         """Test for __str__ method"""
         r1 = Rectangle(4, 6, 2, 1, 12)

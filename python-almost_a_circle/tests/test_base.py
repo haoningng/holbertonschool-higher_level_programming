@@ -20,7 +20,7 @@ class TestBase(unittest.TestCase):
         self.assertEqual(b4.id, 12)
         b5 = Base()
         self.assertEqual(b5.id, 4)
-    
+
     def test_to_json_string(self):
         """Test to_json_string method - None"""
         json_dictionary = Base.to_json_string([])
@@ -42,14 +42,14 @@ class TestBase(unittest.TestCase):
         self.assertEqual(list_output, [])
         """Test from_json_string method - Not None"""
         list_input = [
-            {'id': 89, 'width': 10, 'height': 4}, 
+            {'id': 89, 'width': 10, 'height': 4},
             {'id': 7, 'width': 1, 'height': 7}
         ]
         json_list_input = Rectangle.to_json_string(list_input)
         list_output = Rectangle.from_json_string(json_list_input)
         self.assertEqual(list_output, [{'height': 4, 'width': 10, 'id': 89},
                                        {'height': 7, 'width': 1, 'id': 7}])
-        
+
 
 if __name__ == "__main__":
     unittest.main()

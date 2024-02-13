@@ -39,6 +39,8 @@ class TestRectangle(unittest.TestCase):
             r3 = Rectangle(2, 3, -4)
         with self.assertRaises(ValueError):
             r3 = Rectangle(2, 3, 4, -5)
+        with self.assertRaises(ValueError):
+            r1 = Rectangle(0, 10)
         
 
     def test_height(self):
@@ -49,6 +51,8 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r2.height, 10)
         r3 = Rectangle(10, 2, 0, 0, 12)
         self.assertEqual(r3.height, 2)
+        with self.assertRaises(ValueError):
+            r1 = Rectangle(10, 0)
 
     def test_x(self):
         """Test for x method"""

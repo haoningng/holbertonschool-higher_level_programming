@@ -91,8 +91,10 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r3.display(), None)
         with self.assertRaises(TypeError):
             r3 = Rectangle(10, 2, None, None, 12)
+            r3.display()
         with self.assertRaises(TypeError):
             r3 = Rectangle(10, 2, 2, None, 12)
+            r3.display()
     
     def test_str(self):
         """Test for __str__ method"""

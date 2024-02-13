@@ -23,6 +23,23 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r2.width, 2)
         r3 = Rectangle(10, 2, 0, 0, 12)
         self.assertEqual(r3.width, 10)
+        with self.assertRaises(TypeError):
+            r3 = Rectangle("Hello", 2)
+        with self.assertRaises(TypeError):
+            r3 = Rectangle(2, "World")
+        with self.assertRaises(TypeError):
+            r3 = Rectangle(2, 3, "World")
+        with self.assertRaises(TypeError):
+            r3 = Rectangle(2, 3, 4, "World")
+        with self.assertRaises(ValueError):
+            r3 = Rectangle(2, -3)
+        with self.assertRaises(ValueError):
+            r3 = Rectangle(-2, 3)
+        with self.assertRaises(ValueError):
+            r3 = Rectangle(2, 3, -4)
+        with self.assertRaises(ValueError):
+            r3 = Rectangle(2, 3, 4, -5)
+        
 
     def test_height(self):
         """Test for height method"""

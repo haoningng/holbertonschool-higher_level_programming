@@ -9,9 +9,9 @@ class TestRectangle(unittest.TestCase):
     def test_id(self):
         """Test for id attribute"""
         r1 = Rectangle(10, 2)
-        self.assertEqual(r1.id, 9)
+        self.assertEqual(r1.id, 12)
         r2 = Rectangle(2, 10)
-        self.assertEqual(r2.id, 10)
+        self.assertEqual(r2.id, 13)
         r3 = Rectangle(10, 2, 0, 0, 12)
         self.assertEqual(r3.id, 12)
 
@@ -59,6 +59,15 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r2.area(), 30)
         r3 = Rectangle(1, 2, 2, 0, 12)
         self.assertEqual(r3.area(), 2)
+
+    def test_display(self):
+        """Test for display method"""
+        r1 = Rectangle(10, 2)
+        self.assertEqual(r1.display(), None)
+        r2 = Rectangle(2, 10)
+        self.assertEqual(r2.display(), None)
+        r3 = Rectangle(10, 2, 2, 0, 12)
+        self.assertEqual(r3.display(), None)
 
 if __name__ == "__main__":
     unittest.main()

@@ -1,5 +1,5 @@
-# Python (Programming Language)
-These are my projects in Python, completed as part of my Full Stack Software Engineering Course in Holberton School Australia
+# Python (Programming Language) and SQL (Structured Query Language)
+These are my projects in Python and SQL, completed as part of my Full Stack Software Engineering Course in Holberton School Australia
 
 ## Projects:
 * [Python - Hello, World](python-hello_world/)
@@ -15,8 +15,10 @@ These are my projects in Python, completed as part of my Full Stack Software Eng
 * [Python - Inheritance](python-inheritance/)
 * [Python - Input/Output](python-input_output/)
 * [Python - Almost A Circle](python-almost_a_circle/)
+* [SQL - Introduction](SQL_introduction/)
 
 ## Requirements:
 * Ubuntu 20.04 LTS using python3 (version 3.8.*)
 * pycodestyle (version 2.7.*)
 * Text editor (V/Vim, Emacs)
+* MySQL 8.0 (version 8.0.25)

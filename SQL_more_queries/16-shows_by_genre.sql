@@ -2,6 +2,6 @@
 SELECT c.title AS title, a.name AS name FROM tv_genres AS a
 CROSS JOIN tv_show_genres AS b
 ON a.id = b.genre_id
-JOIN tv_shows AS c
+CROSS JOIN tv_shows AS c
 ON b.show_id = c.id
 ORDER BY title, name ASC;

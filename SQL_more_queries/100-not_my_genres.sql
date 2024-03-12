@@ -7,6 +7,6 @@ WHERE name NOT IN (
     RIGHT JOIN tv_shows AS c
     ON b.show_id = c.id
     WHERE c.title = 'DEXTER'
-    ORDER BY name ASC
-);
+)
+ORDER BY name ASC;
 

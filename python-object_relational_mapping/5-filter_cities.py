@@ -19,10 +19,10 @@ if __name__ == "__main__":
     num = 0
     for row in rows:
         if num == 0:
-            print(row[0], ending="")
+            print(row[0], end="")
             num += 1
         else:
-            print(', ' + row[0], ending="")
+            print(', ' + row[0], end="")
             num += 1
     cur.close()
     db.close()

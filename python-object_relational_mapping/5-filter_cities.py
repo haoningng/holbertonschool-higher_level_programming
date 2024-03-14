@@ -15,7 +15,14 @@ if __name__ == "__main__":
                 ORDER BY c.id ASC"""
     state = sys.argv[4]
     cur.execute(query, (state, ))
-    cities = cur.fetchone()
-    print(cities)
+    rows = cur.fetchall()
+    num = 0
+    for row in rows:
+        if num == 0:
+            print(row[0], ending="")
+            num += 1
+        else:
+            print(', ' + row[0], ending="")
+            num += 1
     cur.close()
     db.close()

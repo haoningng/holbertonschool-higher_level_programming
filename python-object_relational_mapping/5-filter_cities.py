@@ -24,5 +24,6 @@ if __name__ == "__main__":
         else:
             print(', ' + row[0], end="")
             num += 1
+    print()
     cur.close()
     db.close()

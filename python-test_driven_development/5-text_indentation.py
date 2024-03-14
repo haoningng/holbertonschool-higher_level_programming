@@ -15,7 +15,7 @@ def text_indentation(text):
     """
     if not (isinstance(text, str)):
         raise TypeError("text must be a string")
-    
+
     start_index = 0
     for i in range(len(text)):
         if text[i] in (".", "?", ":"):

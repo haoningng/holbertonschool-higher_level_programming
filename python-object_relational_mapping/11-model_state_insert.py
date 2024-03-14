@@ -16,5 +16,5 @@ if __name__ == "__main__":
     session = Session()
     new_state = State(name = "Louisiana")
     session.add(new_state)
-    instance = session.query(State).filter(State.name == "%s" % (new_state.name, )).first()
+    instance = session.query(State).filter(State.name == "%s" % ("Louisiana", )).first()
     print(instance.id)

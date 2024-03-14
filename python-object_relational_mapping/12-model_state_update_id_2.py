@@ -17,4 +17,5 @@ if __name__ == "__main__":
     instance = (session.query(State)
                 .filter(State.id == 2))
     instance.name = "New Mexico"
+    session.add(instance)
     session.commit()

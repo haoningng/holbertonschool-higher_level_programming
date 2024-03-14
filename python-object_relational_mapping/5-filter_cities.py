@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""This script lists all cities of that state, using the database hbtn_0e_4_usa"""
+"""This script lists all cities of that state,
+using the database hbtn_0e_4_usa"""
 import sys
 import MySQLdb
 

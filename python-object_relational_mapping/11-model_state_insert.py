@@ -20,3 +20,4 @@ if __name__ == "__main__":
                 .filter(State.name == "%s" % ("Louisiana", ))
                 .first())
     print(instance.id)
+    session.commit()

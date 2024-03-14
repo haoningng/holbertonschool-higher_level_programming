@@ -15,8 +15,7 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
     instance = session.query(State).order_by(State.id).first()
-    empty_or_not = session.query(State).order_by(State.id).first().count()
-    if empty_or_not == 0:
+    if instance is None:
         print("Nothing")
     else:
         print("{}: {}".format(instance.id, instance.name))

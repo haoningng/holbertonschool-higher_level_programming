@@ -1,5 +1,5 @@
-# Python (Programming Language) and SQL (Structured Query Language)
-These are my projects in Python and SQL, completed as part of my Full Stack Software Engineering Course in Holberton School Australia
+# Python (Programming Language), SQL (Structured Query Language) and JavaScript (DOM manipulation)
+These are my projects in Python, SQL and JavaScript, completed as part of my Full Stack Software Engineering Course in Holberton School Australia
 
 ## Projects:
 * [Python - Hello, World](python-hello_world/)
@@ -18,6 +18,7 @@ These are my projects in Python and SQL, completed as part of my Full Stack Soft
 * [SQL - Introduction](SQL_introduction/)
 * [SQL - More queries](SQL_more_queries/)
 * [Python - Object-Relational Mapping](python-object_relational_mapping/)
+* [JavaScript DOM manipulation](javascript-dom_manipulation/)
 
 ## Requirements:
 * Ubuntu 20.04 LTS using python3 (version 3.8.*)
